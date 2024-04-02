@@ -49,7 +49,7 @@
                     <img src="{{asset('uploads/category/'.$category->image)}}" class="custom-block-image img-fluid" alt="">
                     <div>
                         <div>
-                        <a href="#" class="btn btn-primary">Browse</a>
+                        <a href="#" class="btn btn-info">Browse</a>
                     </div>
                 </div>
                 </a>
