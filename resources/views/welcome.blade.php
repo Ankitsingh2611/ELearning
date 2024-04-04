@@ -34,19 +34,19 @@
 <div class="container py-5">
     <div class="row">
         @php
-            $categories = App\Models\Category::all();
+            $featured_categories = App\Models\FeaturedCategory::all();
         @endphp
 
-        @foreach ($categories as $category)
+        @foreach ($featured_categories as $category)
         <div class="col-lg-4 col-md-6 col-12">
             <div class="custom-block bg-white shadow-lg">
                 <a href="topics-detail.html">
                     <div class="d-flex">
                         <div>
-                            <h5 class="mb-2">{{$category->title}}</h5>
+                            <h5 class="mb-2">{{$category->category->title}}</h5>
                         </div>
                     </div>
-                    <img src="{{asset('uploads/category/'.$category->image)}}" class="custom-block-image img-fluid" alt="">
+                    <img src="{{asset('uploads/category/'.$category->category->image)}}" class="custom-block-image img-fluid" alt="">
                     <div>
                         <div>
                         <a href="#" class="btn btn-info">Browse</a>
