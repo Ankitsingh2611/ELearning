@@ -3,9 +3,9 @@
         <div class="row">
 
             <div class="col-lg-3 col-12 mb-4 pb-2">
-                <a class="navbar-brand mb-2" href="index.html">
+                <a class="navbar-brand mb-2" href="{{'/'}}">
                     <i class="bi-back"></i>
-                    <span>Topic</span>
+                    <span>NOTExpert</span>
                 </a>
             </div>
 
@@ -60,9 +60,6 @@
                         <li><button class="dropdown-item" type="button">Arabic</button></li>
                     </ul>
                 </div>
-
-                <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved.
-                <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a> Distribution <a href="https://themewagon.com">ThemeWagon</a></p>
 
             </div>
 

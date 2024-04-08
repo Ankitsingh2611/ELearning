@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Models\FeaturedCategory;
+use App\Models\Course;
 
 class Category extends Model
 {
@@ -25,6 +26,10 @@ class Category extends Model
         public function featured_categories()
         {
             return $this->hasMany(FeaturedCategory::class, 'category_id','id');
+        }
+
+        public function courses(){
+            return  $this->hasMany(Course::class, 'category_id',  'id');
         }
     }
 

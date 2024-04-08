@@ -11,29 +11,31 @@
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
+
+
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="nav-item {{Request::is('admin/dashboard') ? 'active' : ''}}">
         <a class="nav-link" href="{{url('/admin/dashboard')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
 
-    <li class="nav-item active">
+    <li class="nav-item {{Request::is('admin/trash') ? 'active' : ''}}">
         <a class="nav-link" href="{{url('/admin/trash')}}">
             <i class="fas fa-trash"></i>
             <span>Trash</span></a>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFeatured"
-            aria-expanded="true" aria-controls="collapseFeatured">
+    <li class="nav-item {{Request::is('admin/featured/courses') || Request::is('admin/featured/categories') ? 'active' : ''}}">
+        <a class="nav-link {{Request::is('admin/featured/courses') || Request::is('admin/featured/categories') ? '' : 'collapsed'}}" href="#" data-toggle="collapse" data-target="#collapseFeatured"
+            aria-expanded="{{Request::is('admin/featured/courses') || Request::is('admin/featured/categories') ? true : false }}" aria-controls="collapseFeatured">
             <i class="fas fa-fw fa-cog"></i>
             <span>Featured</span>
         </a>
-        <div id="collapseFeatured" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseFeatured" class="collapse {{Request::is('admin/featured/courses') || Request::is('admin/featured/categories') ? 'show' : ''}}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{url('/admin/featured/courses')}}">Courses</a>
-                <a class="collapse-item" href="{{url('/admin/featured/categories')}}">Categories</a>
+                <a class="collapse-item {{Request::is('admin/featured/courses') ? 'active' : ''}}" href="{{url('/admin/featured/courses')}}">Courses</a>
+                <a class="collapse-item {{Request::is('admin/featured/categories') ? 'active' : ''}}" href="{{url('/admin/featured/categories')}}">Categories</a>
             </div>
         </div>
     </li>
@@ -47,16 +49,30 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
+    <li class="nav-item {{Request::is('admin/category/create') || Request::is('admin/categories') ? 'active' : ''}}">
+        <a class="nav-link {{Request::is('admin/category/create') || Request::is('admin/categories') ? '' : 'collapsed'}}" href="#" data-toggle="collapse" data-target="#collapseCategory"
+            aria-expanded="{{Request::is('admin/category/create') || Request::is('admin/categories') ? true : false }}"" aria-controls="collapseCategory">
             <i class="fas fa-fw fa-cog"></i>
             <span>Categories</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseCategory" class="collapse {{Request::is('admin/category/create') || Request::is('admin/categories') ? 'show' : ''}}" aria-labelledby="headingCategory" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{url('/admin/category/create')}}">Add Category</a>
-                <a class="collapse-item" href="{{url('/admin/categories')}}">View Categories</a>
+                <a class="collapse-item {{Request::is('admin/category/create') ? 'active' : ''}}" href="{{url('/admin/category/create')}}">Add Category</a>
+                <a class="collapse-item {{Request::is('admin/categories') ? 'active' : ''}}" href="{{url('/admin/categories')}}">View Categories</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item {{Request::is('admin/course/create') || Request::is('admin/courses') ? 'active' : ''}}">
+        <a class="nav-link {{Request::is('admin/course/create') || Request::is('admin/courses') ? '' : 'collapsed'}}" href="#" data-toggle="collapse" data-target="#collapseCourse"
+            aria-expanded="{{Request::is('admin/course/create') || Request::is('admin/courses') ? true : false }}"" aria-contourse">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Courses</span>
+        </a>
+        <div id="collapseCourse" class="collapse {{Request::is('admin/course/create') || Request::is('admin/courses') ? 'show' : ''}}" aria-labelledby="headingCourse" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item {{Request::is('admin/course/create') ? 'active' : ''}}" href="{{url('/admin/course/create')}}">Add Course</a>
+                <a class="collapse-item {{Request::is('admin/courses') ? 'active' : ''}}" href="{{url('/admin/courses')}}">View Courses</a>
             </div>
         </div>
     </li>
